@@ -6,7 +6,7 @@ A smart web application that predicts a student's **final grade** and determines
 
 ## 🚀 Live Demo
 
-Run locally on `http://127.0.0.1:5000`
+🌐 **Live Web App:** [https://smart-academic-advisor-one.vercel.app](https://smart-academic-advisor-one.vercel.app)
 
 ---
 
