@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🎓 Smart Academic Advisor</title>
+    <style>
+        body { font-family: Arial; background: #0f172a; color: white; text-align: center; padding: 30px; }
+        .input-group { margin: 10px 0; text-align: center; display: block; }
+        input { padding: 8px; width: 250px; border-radius: 5px; border: none; font-size: 16px; margin-top: 5px; }
+        button { padding: 10px 20px; background: #22c55e; border: none; cursor: pointer; border-radius: 5px; font-weight: bold; margin-top: 15px; }
+        .risk { color: red; font-size: 22px; font-weight: bold; }
+        .safe { color: #22c55e; font-size: 22px; font-weight: bold; }
+        .result { margin-top: 20px; }
+        .limits { font-size: 13px; color: #ccc; margin-bottom: 2px; display: block; }
+    </style>
+</head>
+<body>
+
+<h1>🎓 Smart Academic Advisor</h1>
+
+<form method="post">
+    
+        <div class="input-group">
+            <label class="limits">Attendance (Min: 0 | Max: 100)</label>
+            
+                <input type="number" name="attendance" min="0" max="100" required placeholder="Attendance">
+            
+        </div>
+    
+        <div class="input-group">
+            <label class="limits">Study Hours (Min: 0 | Max: 15)</label>
+            
+                <input type="number" name="study_hours" min="0" max="15" required placeholder="Study Hours">
+            
+        </div>
+    
+        <div class="input-group">
+            <label class="limits">Assignments (Min: 0 | Max: 100)</label>
+            
+                <input type="number" name="assignments" min="0" max="100" required placeholder="Assignments">
+            
+        </div>
+    
+        <div class="input-group">
+            <label class="limits">Quizzes (Min: 0 | Max: 100)</label>
+            
+                <input type="number" name="quizzes" min="0" max="100" required placeholder="Quizzes">
+            
+        </div>
+    
+        <div class="input-group">
+            <label class="limits">Difficulty (Min: 0 | Max: 3)</label>
+            
+                <input type="number" name="difficulty" min="0" max="3" required placeholder="Difficulty">
+            
+        </div>
+    
+        <div class="input-group">
+            <label class="limits">Gpa (Min: 0 | Max: 4.0)</label>
+            
+                <input type="number" name="gpa" step="0.01" min="0" max="4.0" required placeholder="Gpa">
+            
+        </div>
+    
+    <button type="submit">Analyze</button>
+</form>
+
+
+
+</body>
+</html>

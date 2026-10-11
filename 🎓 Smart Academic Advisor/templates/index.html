@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🎓 Smart Academic Advisor</title>
+    <style>
+        body { font-family: Arial; background: #0f172a; color: white; text-align: center; padding: 30px; }
+        .input-group { margin: 10px 0; text-align: center; display: block; }
+        input { padding: 8px; width: 250px; border-radius: 5px; border: none; font-size: 16px; margin-top: 5px; }
+        button { padding: 10px 20px; background: #22c55e; border: none; cursor: pointer; border-radius: 5px; font-weight: bold; margin-top: 15px; }
+        .risk { color: red; font-size: 22px; font-weight: bold; }
+        .safe { color: #22c55e; font-size: 22px; font-weight: bold; }
+        .result { margin-top: 20px; }
+        .limits { font-size: 13px; color: #ccc; margin-bottom: 2px; display: block; }
+    </style>
+</head>
+<body>
+
+<h1>🎓 Smart Academic Advisor</h1>
+
+<form method="post">
+    {% for f in FEATURES %}
+        <div class="input-group">
+            <label class="limits">{{ f.replace('_',' ').title() }} (Min: 0 | Max: {{ max_vals[f] }})</label>
+            {% if f == "gpa" %}
+                <input type="number" name="{{ f }}" step="0.01" min="0" max="{{ max_vals[f] }}" required placeholder="{{ f.replace('_',' ').title() }}">
+            {% else %}
+                <input type="number" name="{{ f }}" min="0" max="{{ max_vals[f] }}" required placeholder="{{ f.replace('_',' ').title() }}">
+            {% endif %}
+        </div>
+    {% endfor %}
+    <button type="submit">Analyze</button>
+</form>
+
+{% if result %}
+<div class="result">
+    <p>🎯 Predicted Final Grade: {{ final_grade }}%</p>
+    <p class="{{cls}}">{{ result }}</p>
+    <a href="/">🔁 Try Again</a>
+</div>
+{% endif %}
+
+</body>
+</html>
