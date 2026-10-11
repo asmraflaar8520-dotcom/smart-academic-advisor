@@ -1,0 +1,6 @@
+🎓 Smart Academic Advisor
+.git
+__pycache__
+*.png
+*.html
+!templates/*.html

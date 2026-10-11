@@ -39,7 +39,7 @@ weights, bias = train(X_norm, y)
 
 def predict_final(input_data):
     input_norm = (input_data - X_mean) / X_std
-    return float(np.dot(input_norm, weights) + bias)
+    return float((np.dot(input_norm, weights) + bias).item())
 
 # ===============================
 # Flask App
